@@ -1,0 +1,13 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menuItem {
+    border: none;
+}
+
+.menuText {
+    font-weight: bold;
+}

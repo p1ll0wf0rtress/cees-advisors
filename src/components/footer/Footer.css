@@ -1,0 +1,15 @@
+.footer {
+    font-size: 10px;
+}
+
+ul li {
+    margin-bottom: 2px;
+    padding: 0px;
+    list-style: none;
+}
+
+.social {
+    max-height: 20px;
+    opacity: 0.6;
+    margin-right: 10px;
+}
