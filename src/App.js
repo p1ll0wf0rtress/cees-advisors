@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './Logo.png';
 import Menu from './components/menu/Menu';
 import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import Contact from './components/contact/Contact';
 import axios from 'axios';
 import './App.css';
 import './normalize.css';
@@ -14,7 +16,6 @@ class App extends Component {
 
     this.state = {
       page: 'home',
-      className: 'hidden'
     }
   }
 
@@ -26,13 +27,12 @@ class App extends Component {
   handlePageChange = (e) => {
     this.setState({page: e}, () => {
       this.getPage();
-      this.handleHeaderLogo();
     });
   }
-
+  //this.state.page === 'home' || 
   getPage = () => {
-    if(this.state.page === 'contact'){
-      this.setPageContent("<p>here's some static html<p>")
+    if(this.state.page === 'contact'){ 
+      //do nothing 
     }
     else {
       axios.get(`https://api.cosmicjs.com/v1/architech-website/object/${this.state.page}`)
@@ -46,16 +46,12 @@ class App extends Component {
     this.refs.pageContent.innerHTML = content;
   }
 
-  handleHeaderLogo = () => {
-    if(this.state.page === 'home'){
-      this.setState({
-        className: 'hidden'
-      })
+  renderIf = (cond, view) => {
+    if(cond){
+      return view
     }
     else {
-      this.setState({
-        className: 'show'
-      })
+      // return nothing
     }
   }
 
@@ -69,9 +65,16 @@ class App extends Component {
           </div>
           <Menu onPageChange={this.handlePageChange}/>
         </header>
-        <div className="container view">
-          <div className="row" ref="pageContent">
-          </div>
+        <div>
+          {this.renderIf(this.state.page === 'home', <Home/>)}
+          {this.renderIf(this.state.page === 'contact', <Contact/>)}
+          {this.renderIf(this.state.page !== 'home' && this.state.page !== 'contact',
+            <div className="container">
+              <div className="row">
+                <div className="ten columns offset-by-one" ref="pageContent"></div>
+              </div>
+            </div>
+          )}
         </div>
         <Footer onPageChange={this.handlePageChange}/>
       </div>
