@@ -36,7 +36,7 @@ class App extends Component {
     }
     else {
       client
-        .fetch(`*[_type == "post" && title == "${this.state.page}"] { body }`)
+        .fetch(`*[_type == "raw" && title == "${this.state.page}"] { body }`)
         .then(res => { this.setPageContent(res[0].body) })
         .catch(err => { console.error('Oh no, error occured: ', err) });
     }

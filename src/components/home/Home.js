@@ -6,11 +6,11 @@ import client from '../../imports/sanityclient';
 export default class Home extends Component {
     componentDidMount(){
       client
-        .fetch('*[_type == "post" && title == "Home Header"] { body }')
+        .fetch('*[_type == "raw" && title == "Home Header"] { body }')
         .then(res => { this.refs.headerText.innerHTML = res[0].body; })
         .catch(err => { console.error('Oh no, error occured: ', err) });
       client
-        .fetch('*[_type == "post" && title == "Home Body"] { body }')
+        .fetch('*[_type == "raw" && title == "Home Body"] { body }')
         .then(res => { this.refs.pageContent.innerHTML = res[0].body; })
         .catch(err => { console.error('Oh no, error occured: ', err) });
     }
