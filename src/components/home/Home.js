@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import background from './background.jpg';
 import './Home.css';
-import axios from 'axios';
+import client from '../../imports/sanityclient';
 
 export default class Home extends Component {
     componentDidMount(){
-      axios.get(`https://api.cosmicjs.com/v1/architech-website/object/home-body`)
-      .then((res) => { 
-        this.refs.pageContent.innerHTML = res.data.object.content 
-      })
-      axios.get(`https://api.cosmicjs.com/v1/architech-website/object/home-header`)
-      .then((res) => { 
-        this.refs.headerText.innerHTML = res.data.object.content 
-      })
+      client
+        .fetch('*[_type == "post" && title == "Home Header"] { body }')
+        .then(res => { this.refs.headerText.innerHTML = res[0].body; })
+        .catch(err => { console.error('Oh no, error occured: ', err) });
+      client
+        .fetch('*[_type == "post" && title == "Home Body"] { body }')
+        .then(res => { this.refs.pageContent.innerHTML = res[0].body; })
+        .catch(err => { console.error('Oh no, error occured: ', err) });
     }
 
     render() {
@@ -21,8 +21,6 @@ export default class Home extends Component {
           <div className="full_width" style={{backgroundImage: `url(${background})`}}>
             <div className="container overImage">
                 <div className="row" ref="headerText">
-                  {/* <h3>Better Engagement. Better Relationships. Better Business.</h3>
-                  <p>Architech believes that nothing beats a friendly smile and a handshake. We'll get you to the smile and handshake.</p> */}
                 </div>
             </div>
           </div>

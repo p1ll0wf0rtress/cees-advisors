@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import logo from './Logo.png';
 import Menu from './components/menu/Menu';
-import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
 import Contact from './components/contact/Contact';
-import axios from 'axios';
+import Footer from './components/footer/Footer';
 import './App.css';
 import './normalize.css';
 import './skeleton.css';
 import { hotjar } from 'react-hotjar';
+import client from './imports/sanityclient';
 
 class App extends Component {
   constructor(props){
@@ -29,16 +29,16 @@ class App extends Component {
       this.getPage();
     });
   }
-  //this.state.page === 'home' || 
+
   getPage = () => {
-    if(this.state.page === 'contact'){ 
+    if(this.state.page === 'contact' || this.state.page === 'home'){ 
       //do nothing 
     }
     else {
-      axios.get(`https://api.cosmicjs.com/v1/architech-website/object/${this.state.page}`)
-      .then((res) => { 
-        this.setPageContent(res.data.object.content) 
-      })
+      client
+        .fetch(`*[_type == "post" && title == "${this.state.page}"] { body }`)
+        .then(res => { this.setPageContent(res[0].body) })
+        .catch(err => { console.error('Oh no, error occured: ', err) });
     }
   }
 

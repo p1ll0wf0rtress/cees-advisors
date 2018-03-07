@@ -58,6 +58,8 @@ export default class Contact extends Component {
                 <div>
                 <h3>We like to talk!</h3>
                 <p>Send us a message and we'll be in touch as soon as possible!</p>
+                <br />
+                <br />
                 <form>
                     <div className="row">
                         <div className="four columns offset-by-two">

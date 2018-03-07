@@ -19,8 +19,8 @@ export default class Footer extends Component {
                     <div className="four columns">
                         <ul>
                             <li><a className="footerMenuItem" onClick={() => this.selectPage("home")}>Home</a></li>
-                            <li><a className="footerMenuItem" onClick={() => this.selectPage("services")}>Solutions</a></li>
-                            <li><a className="footerMenuItem" onClick={() => this.selectPage("about")}>About</a></li>
+                            <li><a className="footerMenuItem" onClick={() => this.selectPage("Solutions")}>Solutions</a></li>
+                            <li><a className="footerMenuItem" onClick={() => this.selectPage("About")}>About</a></li>
                             {/* <li><a className="footerMenuItem" onClick={() => this.selectPage("work")}>Our Work</a></li> */}
                             {/* <li><a className="footerMenuItem" onClick={() => this.selectPage("blog")}>Blog</a></li> */}
                             <li><a className="footerMenuItem" onClick={() => this.selectPage("contact")}>Contact</a></li>

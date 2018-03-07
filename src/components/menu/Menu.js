@@ -11,8 +11,8 @@ export default class Menu extends Component {
         <div className="container menu">
             <div className="row">
                 <button className="menuItem" onClick={() => this.selectPage("home")}>Home</button>
-                <button className="menuItem" onClick={() => this.selectPage("services")}>Solutions</button>
-                <button className="menuItem" onClick={() => this.selectPage("about")}>About</button>
+                <button className="menuItem" onClick={() => this.selectPage("Solutions")}>Solutions</button>
+                <button className="menuItem" onClick={() => this.selectPage("About")}>About</button>
                 {/* <button className="menuItem" onClick={() => this.selectPage("work")}>Our Work</button> */}
                 {/* <button className="menuItem" onClick={() => this.selectPage("blog")}>Blog</button> */}
                 <button className="menuItem" onClick={() => this.selectPage("contact")}>Contact</button>
