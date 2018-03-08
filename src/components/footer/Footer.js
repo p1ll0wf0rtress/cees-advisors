@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import facebook from './facebook-logo.png';
+// eslint-disable-next-line
 import google from './google-logo.png';
 import linkedin from './linkedin-logo.png';
 import twitter from './twitter-logo.png';
 // import youtube from './youtube-play-button.png';
 
 export default class Footer extends Component {
-    selectPage = (e) => {
-        this.props.onPageChange(e)
-    }
-
     render() {
       return (
         <div className="footer">
@@ -18,20 +16,16 @@ export default class Footer extends Component {
                 <div className="row">
                     <div className="four columns">
                         <ul>
-                            <li><a className="footerMenuItem" onClick={() => this.selectPage("home")}>Home</a></li>
-                            <li><a className="footerMenuItem" onClick={() => this.selectPage("Solutions")}>Solutions</a></li>
-                            <li><a className="footerMenuItem" onClick={() => this.selectPage("About")}>About</a></li>
-                            {/* <li><a className="footerMenuItem" onClick={() => this.selectPage("work")}>Our Work</a></li> */}
-                            {/* <li><a className="footerMenuItem" onClick={() => this.selectPage("blog")}>Blog</a></li> */}
-                            <li><a className="footerMenuItem" onClick={() => this.selectPage("contact")}>Contact</a></li>
+                            <Link to="/"><li className="footerMenuItem">Home</li></Link>
+                            <Link to="/solutions"><li className="footerMenuItem">Solutions</li></Link>
+                            <Link to="/about"><li className="footerMenuItem">About</li></Link>
+                            <Link to="/contact"><li className="footerMenuItem">Contact</li></Link>
                         </ul>
                     </div>
                     <div className="offset-by-four four columns">
-                        <img className="social" src={facebook} alt="Architech Facebook page"/>
-                        <img className="social" src={google} alt="Architech Google+ page"/>
-                        <img className="social" src={linkedin} alt="Architech Linkedin page"/>
-                        <img className="social" src={twitter} alt="Architech Twitter page"/>
-                        {/* <img className="social" src={youtube} alt="Architech Youtube page"/> */}
+                        <a href="https://www.facebook.com/architechforbusiness/"><img className="social" src={facebook} alt="Architech Facebook page"/></a>
+                        <a href="https://twitter.com/ArchitechBiz"><img className="social" src={linkedin} alt="Architech Linkedin page"/></a>
+                        <a href=""><img className="social" src={twitter} alt="Architech Twitter page"/></a>
                     </div>
                 </div>
             </div>
