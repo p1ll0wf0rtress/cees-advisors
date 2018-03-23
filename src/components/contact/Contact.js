@@ -12,7 +12,7 @@ export default class Contact extends Component {
     }
 
     componentDidMount(){
-        window.localStorage.setItem("clicked", "true")
+        window.localStorage.setItem("clicked", "true") //set local storage to stop future popup windows
     }
 
     handleFirstName = (e) => {

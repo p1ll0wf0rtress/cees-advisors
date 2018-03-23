@@ -26,55 +26,64 @@ export default class Home extends Component {
     constructor(props){
       super(props)
 
-      this.state = {
-      }
+      this.state = {}
     }
 
     componentDidMount(){
-      this.getBodyContent();
+      this.getAllBodyContent();
     }
 
-    getBodyContent = () => {
-        client
-        .fetch('*[_type == "post" && slug.current == "homeheader"][0]')
-        .then(res => {
-          this.refs.mainTitle.innerHTML = res.title;
-          this.refs.mainSubtitle.innerHTML = res.body[0].children[0].text;
-          this.setState({ 
-            mainImage: urlFor(res.mainImage).url()
-          })
-        })
-        .catch(err => { console.error('Oh no, error occured: ', err) });
+    getBanner = () => {
       client
-        .fetch('*[_type == "post" && slug.current == "homebody"][0]')
-        .then(res => { 
-            this.refs.homeBodyContent.innerHTML = blocksToHtml({
-              blocks: res.body,
-              serializers: serializers,
-              projectId: 'gtb605x1',
-              dataset: 'production',
-            });
-         })
-        .catch(err => { console.error('Oh no, error occured: ', err) });
-        client
-        .fetch('*[_type == "post" && slug.current == "homebody2"][0]')
-        .then(res => { 
-            this.refs.homeBodyContent2.innerHTML = blocksToHtml({
-              blocks: res.body,
-              serializers: serializers,
-              projectId: 'gtb605x1',
-              dataset: 'production',
-            });
-         })
-        .catch(err => { console.error('Oh no, error occured: ', err) });
+      .fetch('*[_type == "post" && slug.current == "homeheader"][0]')
+      .then(res => {
+        this.refs.mainTitle.innerHTML = res.title; //set main title phrase
+        this.refs.mainSubtitle.innerHTML = res.body[0].children[0].text; //set main subtitle phrase
+        this.setState({ mainImage: urlFor(res.mainImage).url() }) //set banner background image
+      })
+      .catch(err => { console.error('Oh no, error occured: ', err) });
+    }
+    // get body content1 i.e. the section after the chevron (position 1 & 2 have been reversed for now)
+    getBody1 = () => {
+      client
+      .fetch('*[_type == "post" && slug.current == "homebody"][0]')
+      .then(res => { 
+          this.refs.homeBodyContent.innerHTML = blocksToHtml({
+            blocks: res.body,
+            serializers: serializers,
+            projectId: 'gtb605x1',
+            dataset: 'production',
+          });
+       })
+      .catch(err => { console.error('Oh no, error occured: ', err) });
+    }
+    //get body content2 i.e. the first section after the banner
+    getBody2 = () => {
+      client
+      .fetch('*[_type == "post" && slug.current == "homebody2"][0]')
+      .then(res => { 
+          this.refs.homeBodyContent2.innerHTML = blocksToHtml({
+            blocks: res.body,
+            serializers: serializers,
+            projectId: 'gtb605x1',
+            dataset: 'production',
+          });
+       })
+      .catch(err => { console.error('Oh no, error occured: ', err) });
+    }
+    // get all the body content from sanity.io
+    getAllBodyContent = () => {
+      this.getBanner();
+      this.getBody1();
+      this.getBody2();
     }
 
     renderIf = (cond, view) => {
       if(cond){
         return view
       }
-      else {
-        // return nothing
+      else {  
+        // return nothing 
       }
     }
 

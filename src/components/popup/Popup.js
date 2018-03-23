@@ -27,11 +27,9 @@ export default class Popup extends Component {
     constructor(props){
         super(props)
 
-        this.state = {
-            show: "none"
-        }
+        this.state = { show: "none" }
     }
-
+    //contact button component with routing function to send to contact page
     ContactButton = withRouter(({ history }) => (
         <button
           type='button'
@@ -42,23 +40,22 @@ export default class Popup extends Component {
     
     componentDidMount(){
         //eslint-disable-next-line
-        let timeToShow = Math.floor(Math.random() * (20 - 8 + 1)) + 8;
-        setTimeout(this.showPopup, 
-            timeToShow * 
-            1000)
-        client
+        let timeToShow = Math.floor(Math.random() * (20 - 8 + 1)) + 8; // time in seconds, randomized, to show popup between 20 and 8 seconds
+        setTimeout(this.showPopup, timeToShow * 1000)
+        this.getPopupContent()
+    }
+    //get popup content from sanity
+    getPopupContent = () => {
+        client // get popup content from sanity
         .fetch('*[_type == "post" && slug.current == "popup"][0]')
         .then((res) => {
-            this.setState({ 
-                    mainImage: urlFor(res.mainImage).url()
-                })
-            this.refs.popupContent.innerHTML = blocksToHtml({
-                blocks: res.body,
-                serializers: serializers,
-              });
+             //set graphic for popup
+            this.setState({  mainImage: urlFor(res.mainImage).url() })
+            //set body content for popup
+            this.refs.popupContent.innerHTML = blocksToHtml({ blocks: res.body, serializers: serializers });
         })
     }
-
+    //shows the popup
     showPopup = () => {
         var clicked = window.localStorage.getItem("clicked");
         if(clicked === "true"){
@@ -67,7 +64,7 @@ export default class Popup extends Component {
             this.setState({ show: "block" });
         }
     }
-
+    //hides the popup
     hidePopup = () => {
         if(this.state.show === "block"){
             this.setState({ show: "none"});
@@ -76,7 +73,6 @@ export default class Popup extends Component {
 
     popupClicked = () => {
         this.hidePopup(); 
-        window.localStorage.setItem("clicked", "true")
     }
 
     render(){
