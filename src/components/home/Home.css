@@ -3,13 +3,59 @@
     margin-left: 0px;
     margin-right: 0px;
     min-width: 100%;
-    height: 250px;
     background-size: cover;
-    padding-top: 150px;
+    padding-top: 125px;
     background-position: center;
 }
 
 .overImage {
     color: #fff;
-    margin-top: 100px;
+    margin-top: 60px;
+}
+
+.mainTitle {
+    font-size: 3.6rem;
+    text-shadow: 1px 1px rgba(57, 63, 72, 0.3);
+}
+
+.mainSubtitle {
+    font-size: 2rem;
+    text-shadow: 1px 1px rgba(57, 63, 72, 0.3);
+}
+
+.homebody {
+    margin-top: 50px;
+    text-align-last: center;
+}
+
+.homebody > div > figure > img {
+    height: 100px;
+}
+
+.homebody > div > p:nth-child(4) {
+    margin-bottom: 100px;
+}
+
+.callToAction {
+    background-color: #272727;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    -webkit-clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0, 50% 20%);
+    clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0, 50% 20%);
+}
+
+.homeContainer {
+    margin-top: 135px;
+}
+
+.home-contact-button {
+    -webkit-box-shadow: 0 3px 5px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+@media(max-width: 500px){
+    .homeContainer {
+        margin-top: 210px;
+    }
 }

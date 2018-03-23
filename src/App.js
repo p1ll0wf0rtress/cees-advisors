@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import Header from './components/header/Header';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Home from './components/home/Home';
-import Page from './components/page/Page';
+import RealEstate from './components/realestate/realestate';
+import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import './App.css';
 import './normalize.css';
 import './skeleton.css';
 import { hotjar } from 'react-hotjar';
+import Popup from './components/popup/Popup';
+
 
 class App extends Component {
   constructor(props){
@@ -21,26 +24,23 @@ class App extends Component {
     hotjar.initialize(801885, 6);
   }
 
-  renderIf = (cond, view) => {
-    if(cond){
-      return view
-    }
-    else {
-      // return nothing
-    }
+  passPopupState = (data) => {
+    this.setState({ popupDisplayCount: data})
   }
 
   render() {
     return (
-      <div className="App">
-        <Router basename="">
+      <div className="App">   
+        <Router basename="/">
           <div>
-              <Route path="" component={Header} />
-              <Route exact path="/" component={Home}/>
-              <Route path="/solutions" component={Page} />
-              <Route path="/about" component={Page} />
+              <Popup />  
+              <Route path="/" component={Header} />
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
-              <Route path="" component={Footer} />
+              {/* not part of any menu */}
+              <Route path="/realestate" component={RealEstate} />
+              <Route path="/" component={Footer} />
           </div>
         </Router>
       </div>

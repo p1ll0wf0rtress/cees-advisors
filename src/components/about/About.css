@@ -1,0 +1,13 @@
+.bios {
+    text-align: center;
+}
+
+.about {
+    margin-top: 200px;
+}
+
+@media(max-width: 500px){
+    .about {
+        margin-top: 275px;
+    }
+}

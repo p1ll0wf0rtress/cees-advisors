@@ -11,6 +11,10 @@ export default class Contact extends Component {
         }
     }
 
+    componentDidMount(){
+        window.localStorage.setItem("clicked", "true")
+    }
+
     handleFirstName = (e) => {
         this.setState({ first_name: e.target.value })
     }
@@ -53,12 +57,15 @@ export default class Contact extends Component {
 
     render(){
         return(
-            <div className="container">
+            <div className="container" style={{marginTop: 250}}>
                 {this.renderIf(!this.state.submitted,                 
-                <div>
-                <h3>We like to talk!</h3>
-                <p>Send us a message and we'll be in touch as soon as possible!</p>
-                <br />
+                <div className="contactTitle">
+                    <div className="row">
+                        <div className="eight columns offset-by-two">
+                            <h3>We like to talk!</h3>
+                            <p>Send us a message and we'll be in touch as soon as possible!</p>
+                        </div>
+                    </div>
                 <br />
                 <form>
                     <div className="row">

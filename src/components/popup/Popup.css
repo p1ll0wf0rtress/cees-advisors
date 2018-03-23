@@ -1,0 +1,82 @@
+.popupContainer {
+    background-color: #228b22;
+    z-index: 10;
+    width: 50%;
+    position: fixed;
+    top:  200px;
+    left: 25%;
+    -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    -moz-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+}
+
+.popupContent {
+    padding: 20px;
+    color: #fff;
+}
+
+.popupGraphic {
+    width: 125px;
+    padding: 50px;
+}
+
+.popupContent > p {
+    font-size: 16px;
+}
+
+.popupContent > h4 {
+    font-weight: 400;
+}
+
+.bottomSection{
+    position: relative;
+    padding: 20px 0px 10px 0px;
+    background-color: #fff;
+}
+
+.bottomSection > button {
+    background-color: #222;
+    color: white !important;
+    -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    -moz-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+}
+
+.getInTouch:hover {
+    background-color: forestgreen !important;
+    -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    -moz-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+}
+
+.closeContainer {
+    width: 100%;
+    text-align: right;
+    height: 16px !important;
+    padding-bottom: 20px;
+}
+
+.close {
+    color: #fff;
+    height: 16px;
+    border: none;
+    padding: 0px;
+    font-size: 24px;
+    margin: 0px 15px 0px 0px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media(max-width: 720px){
+    .popupContainer{
+        width: 98%;
+        left: 1%;
+    }
+    
+    .popupGraphic {
+        display: none;
+    }
+}

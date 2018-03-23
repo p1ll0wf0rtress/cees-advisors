@@ -1,0 +1,50 @@
+.App-header {
+    /* start shadow */
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    /* end shadow */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    transition: height 0.7s;
+}
+
+.menuMain {
+    transition: margin 0.7s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menuText {
+    font-weight: bold;
+}
+
+.logo-large {
+    width: 150px;
+    transition: width 0.7s, margin 0.7s;
+}
+
+.logo-small {
+    width: 75px;
+    transition: width 0.7s, margin 0.7s;
+}
+
+@media(max-width: 500px){
+    .logo-container{
+        float: none !important;
+        text-align: center;
+    }
+    .logo-large {
+        margin-top: 10px;
+        width: 150px;
+    }
+    .logo-small {
+        width: 100px;
+    }
+}

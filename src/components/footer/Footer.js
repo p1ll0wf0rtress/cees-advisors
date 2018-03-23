@@ -14,15 +14,15 @@ export default class Footer extends Component {
         <div className="footer">
             <div className="container">
                 <div className="row">
-                    <div className="four columns">
+                    <div className="two columns offset-by-one">
                         <ul>
                             <Link to="/"><li className="footerMenuItem">Home</li></Link>
-                            <Link to="/solutions"><li className="footerMenuItem">Solutions</li></Link>
-                            <Link to="/about"><li className="footerMenuItem">About</li></Link>
-                            <Link to="/contact"><li className="footerMenuItem">Contact</li></Link>
+                            <Link to="/about"><li className="footerMenuItem">Who We Are</li></Link>
+                            <a href="https://medium.com/@architechdata"><li className="footerMenuItem">Blog</li></a>
+                            <Link to="/contact"><li className="footerMenuItem">Contact Us</li></Link>
                         </ul>
                     </div>
-                    <div className="offset-by-four four columns">
+                    <div className="offset-by-five four columns" style={{textAlign: 'right'}}>
                         <a href="https://www.facebook.com/architechforbusiness/"><img className="social" src={facebook} alt="Architech Facebook page"/></a>
                         <a href="https://twitter.com/ArchitechBiz"><img className="social" src={linkedin} alt="Architech Linkedin page"/></a>
                         <a href=""><img className="social" src={twitter} alt="Architech Twitter page"/></a>
