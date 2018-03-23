@@ -44,7 +44,7 @@ export default class Popup extends Component {
         //eslint-disable-next-line
         let timeToShow = Math.floor(Math.random() * (20 - 8 + 1)) + 8;
         setTimeout(this.showPopup, 
-            // timeToShow * 
+            timeToShow * 
             1000)
         client
         .fetch('*[_type == "post" && slug.current == "popup"][0]')
