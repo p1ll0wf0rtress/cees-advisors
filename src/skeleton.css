@@ -25,6 +25,8 @@
 - Media Queries
 */
 
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -124,7 +126,10 @@ body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  /* font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   color: #222; }
 
 
@@ -160,7 +165,8 @@ p {
 a {
   color: #555; }
 a:hover {
-  color: #555; }
+  color: #555; 
+}
 
 
 /* Buttons
@@ -206,8 +212,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #fff;
-  background-color: #228b22;
-  border-color: #228b22; }
+  background-color: #55bf9b;
+  border-color: #55bf9b; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -219,8 +225,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #73937e;
-  border-color: #73937e; }
+  background-color: #06BF85;
+  border-color: #06BF85; }
 
 
 /* Forms
@@ -266,7 +272,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid #06BF85;
   outline: 0; }
 label,
 legend {

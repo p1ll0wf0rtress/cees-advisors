@@ -1,3 +1,10 @@
 .bio {
     margin-bottom: 30px;
 }
+
+.team_header {
+    background-color: #55BF98;
+    padding: 70px 0px 50px 0px;
+    -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 75%);
+}

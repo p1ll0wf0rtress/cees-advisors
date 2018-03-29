@@ -4,11 +4,11 @@
 }
 
 .contactContainer {
-    margin-top: 200px;
+    margin-top: 200px !important;
 }
 
 @media(max-width: 500px){
     .contactContainer {
-        margin-top: 275px;
+        margin-top: 175px !important;
     }
 }

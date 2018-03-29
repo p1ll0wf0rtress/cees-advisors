@@ -1,10 +1,14 @@
+.homeContainer {
+    margin-top: 105px;
+}
+
 .full_width {
     width: 100%;
     margin-left: 0px;
     margin-right: 0px;
     min-width: 100%;
     background-size: cover;
-    padding-top: 125px;
+    padding-top: 175px;
     background-position: center;
 }
 
@@ -15,16 +19,16 @@
 
 .mainTitle {
     font-size: 3.6rem;
-    text-shadow: 1px 1px rgba(57, 63, 72, 0.3);
+    text-shadow: 1px 1px #383F3D;
 }
 
 .mainSubtitle {
     font-size: 2rem;
-    text-shadow: 1px 1px rgba(57, 63, 72, 0.3);
+    text-shadow: 1px 1px #383F3D;
 }
 
 .homebody {
-    margin-top: 50px;
+    margin-top: 25px;
     text-align-last: center;
 }
 
@@ -37,19 +41,15 @@
 }
 
 .callToAction {
-    background-color: #272727;
+    background-color: #383F3D;
     padding-top: 120px;
     padding-bottom: 60px;
     -webkit-clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0, 50% 20%);
     clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0, 50% 20%);
 }
 
-.homeContainer {
-    margin-top: 135px;
-}
-
 .home-contact-button {
-    -webkit-box-shadow: 0 3px 5px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
     -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }

@@ -113,8 +113,8 @@
   }
   .rc-menu-horizontal > .rc-menu-submenu-active,
   .rc-menu-horizontal > .rc-menu-item-active {
-    border-bottom: 2px solid #228b22;
-    color: #2baee9;
+    border-bottom: 2px solid #55BF9B;
+    color: #383F3D;
   }
   .rc-menu-horizontal:after {
     content: "\20";

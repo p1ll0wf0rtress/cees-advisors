@@ -57,7 +57,7 @@ export default class Contact extends Component {
 
     render(){
         return(
-            <div className="container" style={{marginTop: 250}}>
+            <div className="container contactContainer">
                 {this.renderIf(!this.state.submitted,                 
                 <div className="contactTitle">
                     <div className="row">
@@ -74,18 +74,27 @@ export default class Contact extends Component {
                             <input className="u-full-width" placeholder="Your first name" id="first_name" autoComplete="off" type="text" onChange={this.handleFirstName}/>
                         </div>
                         <div className="four columns">
-                            <label htmlFor="last_name">Last Name</label>
-                            <input className="u-full-width" placeholder="Your last name" id="last_name" autoComplete="off" type="text" onChange={this.handleLastName}/>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="four columns offset-by-two">
                         <label htmlFor="emailInput">Email</label>
                         <input className="u-full-width" placeholder="example@mailbox.com" id="emailInput" autoComplete="off" type="email" onChange={this.handleEmail}/>
                         </div>
+                    </div>
+                    <div className="row">
+                        <div className=" offset-by-two four columns">
+                            <label htmlFor="last_name">Last Name</label>
+                            <input className="u-full-width" placeholder="Your last name" id="last_name" autoComplete="off" type="text" onChange={this.handleLastName}/>
+                        </div>
                         <div className="four columns">
-                        <label htmlFor="phoneInput">Phone</label>
-                        <input className="u-full-width" placeholder="(555) 555-5555" id="phoneInput" autoComplete="off" type="text" onChange={this.handlePhone}/>
+                            <label htmlFor="phoneInput">Phone</label>
+                            <input className="u-full-width" placeholder="(555) 555-5555" id="phoneInput" autoComplete="off" type="text" onChange={this.handlePhone}/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div class="offset-by-two eight columns">
+                        <label for="exampleRecipientInput">Reason for contacting</label>
+                        <select class="u-full-width" id="exampleRecipientInput">
+                            <option value="consultation">Consultation</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
                         </div>
                     </div>
                     <div className="row">

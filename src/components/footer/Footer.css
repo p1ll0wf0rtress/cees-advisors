@@ -1,7 +1,7 @@
 .footer {
     font-size: 10px;
     margin-top: 100px;
-    background-color: #228b22;
+    background-color: #024B2C;
     padding: 80px 0px 40px 0px;
 }
 
@@ -14,7 +14,8 @@ ul li {
 .social {
     max-height: 20px;
     opacity: 0.6;
-    margin-right: 10px;
+    margin-bottom: 6px;
+    display: block;
 }
 
 .footerMenuItem {

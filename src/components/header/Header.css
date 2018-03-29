@@ -26,13 +26,15 @@ a {
 }
 
 .logo-large {
-    width: 150px;
-    transition: width 0.7s, margin 0.7s;
+    margin-top: 18px;
+    height: 40px;
+    transition: height 0.7s, margin 0.7s;
 }
 
 .logo-small {
-    width: 75px;
-    transition: width 0.7s, margin 0.7s;
+    margin-top: 7.5px;
+    height: 30px;
+    transition: height 0.7s, margin 0.7s;
 }
 
 @media(max-width: 500px){
@@ -42,9 +44,9 @@ a {
     }
     .logo-large {
         margin-top: 10px;
-        width: 150px;
+        height: 35px;
     }
     .logo-small {
-        width: 100px;
+        height: 20px;
     }
 }
