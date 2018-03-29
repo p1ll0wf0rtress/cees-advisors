@@ -18,12 +18,12 @@
 }
 
 .mainTitle {
-    font-size: 3.6rem;
+    font-size: 3.8rem;
     text-shadow: 1px 1px #383F3D;
 }
 
 .mainSubtitle {
-    font-size: 2rem;
+    font-size: 2.7rem;
     text-shadow: 1px 1px #383F3D;
 }
 
@@ -46,6 +46,16 @@
     padding-bottom: 60px;
     -webkit-clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0, 50% 20%);
     clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0, 50% 20%);
+}
+
+.trifold {
+    background-color: rgba(106, 117, 114, 0.5);
+    border-radius: 5px;
+    height: 400px;
+    padding: 60px 15px 30px 15px;
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 
 .home-contact-button {

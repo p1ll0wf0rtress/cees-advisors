@@ -25,20 +25,20 @@ export default class Home extends Component {
     }
 
     // get body content1 i.e. the section after the chevron (position 1 & 2 have been reversed for now)
-    getBody1 = () => {
-      client
-      .fetch('*[_type == "post" && slug.current == "homebody"][0]')
-      .then(res => { 
-          this.refs.homeBodyContent.innerHTML = blocks(res);
-       })
-      .catch(err => { console.error('Oh no, error occured: ', err) });
-    }
-    //get body content2 i.e. the first section after the banner
     getBody2 = () => {
       client
       .fetch('*[_type == "post" && slug.current == "homebody2"][0]')
       .then(res => { 
           this.refs.homeBodyContent2.innerHTML = blocks(res);
+       })
+      .catch(err => { console.error('Oh no, error occured: ', err) });
+    }
+    //get body content2 i.e. the first section after the banner
+    getBody1 = () => {
+      client
+      .fetch('*[_type == "post" && slug.current == "homebody"][0]')
+      .then(res => { 
+          this.refs.homeBodyContent.innerHTML = blocks(res);
        })
       .catch(err => { console.error('Oh no, error occured: ', err) });
     }
@@ -71,7 +71,7 @@ export default class Home extends Component {
               </div>
             </div>
             <div className="container">
-              <div className="row" style={{textAlign: 'center', paddingTop: 100, paddingBottom: 75}}>
+              <div className="row" style={{textAlign: 'center', paddingTop: 100, paddingBottom: 25}}>
                 <div className="eight columns offset-by-two homebody" ref="homeBodyContent"></div>
               </div>
               <div className="row">
@@ -82,20 +82,20 @@ export default class Home extends Component {
                 </div>
               </div>
               <div className="row" style={{marginTop: 75}}>
-                <div className="four columns" style={{textAlign: 'center'}}>
-                  <img src={require('./interview.svg')} style={{width: 100, marginBottom: 50}} alt=""/>
+                <div className="four columns trifold" style={{textAlign: 'center'}}>
+                  <img src={require('./interview.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
                   <p>Architech uses the basics of communication, which at their core have never changed, to connect you with your clients on a deeper level.</p>
                 </div>
-                <div className="four columns" style={{textAlign: 'center'}}>
-                  <img src={require('./analytics.svg')} style={{width: 100, marginBottom: 50}} alt=""/>
+                <div className="four columns trifold" style={{textAlign: 'center'}}>
+                  <img src={require('./analytics.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
                   <p>Using your company's customer data, in conjunction with our propietary data, we create an actionable plan to grow you business engagement.</p>
                 </div>
-                <div className="four columns" style={{textAlign: 'center'}}>
-                  <img src={require('./handshake.svg')} style={{width: 100, marginBottom: 50}} alt=""/>
-                  <p>With the power of the best media techniques, Architech will help you build better relationships and grow you client base in the most meaninful way.</p>
+                <div className="four columns trifold" style={{textAlign: 'center'}}>
+                  <img src={require('./handshake.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
+                  <p>With the power of the best media techniques, Architech will help you build better relationships and grow you client base in a meaninful way.</p>
                 </div>
               </div>
-              <div className="row" style={{textAlign: 'center', marginTop: 50}}>
+              <div className="row" style={{textAlign: 'center', marginTop: 100}}>
                 <img src={linearLogo} alt="horizontal Architech logo" style={{height: 50}}/>
               </div>
             </div>
