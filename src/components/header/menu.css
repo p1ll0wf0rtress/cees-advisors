@@ -97,7 +97,7 @@
     border-bottom: 1px solid transparent;
     border-bottom: 1px solid #fff;
     box-shadow: none;
-    text-align: center;
+    text-align: right;
   }
   .rc-menu-horizontal > .rc-menu-item,
   .rc-menu-horizontal > .rc-menu-submenu > .rc-menu-submenu-title {

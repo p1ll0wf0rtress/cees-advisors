@@ -27,21 +27,16 @@ export default class Blog extends Component {
             list: false,
             slug: e
         })
-        // console.log(e + " from blog component")
     }
 
     render(){
         return(
-            <Switch>
-                <Route exact path='/blog' component={BlogList}/>
-                <Route path="/blog/:slug" component={BlogPost}/>
-            </Switch>
+            <div className="blog_container">
+                <Switch>
+                    <Route exact path='/blog' component={BlogList}/>
+                    <Route path="/blog/:slug" component={BlogPost}/>
+                </Switch>
+            </div>
         )
     }
 }
-
-// this.renderIf2(this.state.list, <BlogList setPost={this.setPost} />, 
-// <Redirect to={{            
-//     pathname: "/blog/post",
-//     state: { from: this.props.location }
-// }} />)

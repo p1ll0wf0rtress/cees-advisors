@@ -1,5 +1,5 @@
 .popupContainer {
-    background-color: #228b22;
+    background-color: #06BF85;
     z-index: 10;
     width: 50%;
     position: fixed;
@@ -37,13 +37,13 @@
 .bottomSection > button {
     background-color: #222;
     color: white !important;
-    -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    /* -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
     -moz-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
-    box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
+    box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5); */
 }
 
 .getInTouch:hover {
-    background-color: forestgreen !important;
+    background-color: #06BF85 !important;
     -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
     -moz-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
     box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);

@@ -19,14 +19,7 @@ export default class BlogList extends Component {
         client
         .fetch('*[_type == "blog"]')
         .then((res) => {
-            console.log(res)
-            const posts = res.map((post) => 
-            // onClick={() => this.props.setPost(post.slug.current)}
-                <Link to={`/blog/${post.slug.current}`}><li key={post.slug.current} className="blog_card" >
-                    <h5>{post.title}</h5>
-                    <p>{post.description}</p>
-                </li></Link>
-            );
+            const posts = res.map((post) => <Link to={`/blog/${post.slug.current}`} key={post.slug.current}><li className="blog_card" ><h5>{post.title}</h5><p>{post.description}</p></li></Link>);
             this.setState({blogPosts: posts})
         })
     }

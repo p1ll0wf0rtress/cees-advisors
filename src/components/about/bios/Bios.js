@@ -3,7 +3,6 @@ import client from '../../../imports/sanityclient';
 import imageUrlBuilder from '@sanity/image-url';
 import './Bios.css';
 const builder = imageUrlBuilder(client)
- // eslint-disable-next-line
 function urlFor(source) {
   return builder.image(source)
 }
@@ -19,7 +18,6 @@ const serializers = {
     )
   }
 }
-// eslint-disable-next-line
 function blockConfig(res){
     return {
         blocks: res.body,

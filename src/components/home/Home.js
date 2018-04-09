@@ -4,13 +4,15 @@ import client from '../../imports/sanityclient';
 import blocks from '../../imports/blocksToHtml';
 import { Link } from 'react-router-dom';
 import linearLogo from '../header/linear_logo.png';
-
+import './../../hover-min.css'
 
 export default class Home extends Component {
     constructor(props){
       super(props)
 
-      this.state = {}
+      this.state = {
+        screenWidth: window.innerWidth,
+      }
     }
 
     componentDidMount(){
@@ -66,35 +68,37 @@ export default class Home extends Component {
                 <div className="row" style={{textAlign: 'center', color: '#fff'}}>
                   <h3>Ready to start growing?</h3>
                   <p>Fully realize your growth potential with Architech.</p>
-                  <Link to="/contact"><button className="button-primary" style={{marginTop: 20}}>Contact Us</button></Link>
+                  <Link to="/contact"><button className="button-primary hvr-float-shadow" style={{marginTop: 20}}>Contact Us</button></Link>
                 </div>
               </div>
             </div>
             <div className="container">
-              <div className="row" style={{textAlign: 'center', paddingTop: 100, paddingBottom: 25}}>
+
+              <div className="row" style={{textAlign: 'center', marginTop: 125}}>
                 <div className="eight columns offset-by-two homebody" ref="homeBodyContent"></div>
               </div>
-              <div className="row">
-                <div className="four columns offset-by-four" style={{textAlign: 'center'}}>
-                  <Link to="/services">
-                    <button className="button-primary">Find Out More</button>
-                  </Link>
+            
+              <div className="row" style={{textAlign: 'center', marginTop: 100, marginBottom: 0}}>
+                <div className="twelve columns">
+                  <h3>Explore Our Process</h3>
                 </div>
               </div>
-              <div className="row" style={{marginTop: 75}}>
-                <div className="four columns trifold" style={{textAlign: 'center'}}>
-                  <img src={require('./interview.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
+
+              <div className="row" style={{marginTop: 50}}>
+                <div className="four columns trifold hvr-grow" style={{textAlign: 'center'}} onClick={() => this.props.history.push("/services")}>
+                  <img src={require('./icons/interview.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
                   <p>Architech uses the basics of communication, which at their core have never changed, to connect you with your clients on a deeper level.</p>
                 </div>
-                <div className="four columns trifold" style={{textAlign: 'center'}}>
-                  <img src={require('./analytics.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
-                  <p>Using your company's customer data, in conjunction with our propietary data, we create an actionable plan to grow you business engagement.</p>
+                <div className="four columns trifold hvr-grow" style={{textAlign: 'center'}} onClick={() => this.props.history.push("/services")}>
+                  <img src={require('./icons/analytics.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
+                  <p>Using your company's customer data, in conjunction with our propietary datasets, we create an action plan to grow you business engagement.</p>
                 </div>
-                <div className="four columns trifold" style={{textAlign: 'center'}}>
-                  <img src={require('./handshake.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
+                <div className="four columns trifold hvr-grow" style={{textAlign: 'center'}} onClick={() => this.props.history.push("/services")}>
+                  <img src={require('./icons/handshake.svg')} style={{width: 125, marginBottom: 50}} alt=""/>
                   <p>With the power of the best media techniques, Architech will help you build better relationships and grow you client base in a meaninful way.</p>
                 </div>
               </div>
+
               <div className="row" style={{textAlign: 'center', marginTop: 100}}>
                 <img src={linearLogo} alt="horizontal Architech logo" style={{height: 50}}/>
               </div>

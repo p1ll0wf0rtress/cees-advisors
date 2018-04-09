@@ -61,6 +61,14 @@ export default class Header extends Component {
         }
     }
 
+    showMenu = () => {
+        var menu = document.getElementById("menuMain");
+        if(menu.style.display === 'none'){
+            console.log('got here')
+            menu.display = 'block';
+        }
+    }
+
     render(){
         return(
             <header className="App-header" style={{paddingTop: 15, paddingBottom: this.state.bottomPadding}}>
@@ -68,13 +76,13 @@ export default class Header extends Component {
                     <div className="three columns logo-container">
                         <Link to="/"><img src={linearLogo} className={this.state.logo} alt="logo"/></Link>
                     </div>
-                    <div className="seven columns offset-by-two">
-                        <Menu mode="horizontal" className="u-full-width menuMain" style={{marginTop: this.state.headerMargin}}>
+                    <div className="six columns offset-by-three">
+                        <Menu mode="horizontal" className="u-full-width menuMain" id="menuMain" style={{textAlign: 'right !important', marginTop: this.state.headerMargin}}>
                             <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/">Home</Link></MenuItem>
                             <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/services">Services</Link></MenuItem>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/about">Who We Are</Link></MenuItem>
+                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/about">About</Link></MenuItem>
                             <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/blog">Blog</Link></MenuItem>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/contact">Contact Us</Link></MenuItem>
+                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/contact">Contact</Link></MenuItem>
                         </Menu>
                     </div>
                 </div>

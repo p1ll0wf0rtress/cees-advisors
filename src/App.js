@@ -15,7 +15,6 @@ import './skeleton.css';
 import { hotjar } from 'react-hotjar';
 import Popup from './components/popup/Popup';
 
-
 class App extends Component {
   constructor(props){
     super(props)
@@ -33,7 +32,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">   
+      <div className="App"> 
+        <div>  
         <Router basename="/">
           <div>
               <Popup />  
@@ -48,6 +48,7 @@ class App extends Component {
               <Route path="/" component={Footer} />
           </div>
         </Router>
+        </div>
       </div>
     );
   }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './Popup.css';
 import client from '../../imports/sanityclient';
+import blocks from '../../imports/blocksToHtml';
 import imageUrlBuilder from '@sanity/image-url';
+import watering from './watering.svg'
 
 import { withRouter } from 'react-router-dom';
 
@@ -9,18 +11,6 @@ const builder = imageUrlBuilder(client)
  
 function urlFor(source) {
   return builder.image(source)
-}
-
-const blocksToHtml = require('@sanity/block-content-to-html')
-const h = blocksToHtml.h
-const serializers = {
-  types: {
-    code: props => (
-      h('pre', {className: props.node.language},
-        h('code', props.node.code)
-      )
-    )
-  }
 }
 
 export default class Popup extends Component {
@@ -41,7 +31,9 @@ export default class Popup extends Component {
     componentDidMount(){
         //eslint-disable-next-line
         let timeToShow = Math.floor(Math.random() * (20 - 8 + 1)) + 8; // time in seconds, randomized, to show popup between 20 and 8 seconds
-        setTimeout(this.showPopup, timeToShow * 1000)
+        setTimeout(this.showPopup, 
+            timeToShow * 
+            1000)
         this.getPopupContent()
     }
     //get popup content from sanity
@@ -52,7 +44,7 @@ export default class Popup extends Component {
              //set graphic for popup
             this.setState({  mainImage: urlFor(res.mainImage).url() })
             //set body content for popup
-            this.refs.popupContent.innerHTML = blocksToHtml({ blocks: res.body, serializers: serializers });
+            this.refs.popupContent.innerHTML = blocks(res);
         })
     }
     //shows the popup
@@ -85,7 +77,7 @@ export default class Popup extends Component {
                 <div ref="popupContent">
                 </div>
                 <div style={{textAlign: 'center'}}>
-                    <img src={this.state.mainImage} className="popupGraphic" alt="watering can icon"/>
+                    <img src={watering} className="popupGraphic" alt="watering can icon"/>
                 </div>
             </div>
             <div className="bottomSection" style={{textAlign: 'center'}}>

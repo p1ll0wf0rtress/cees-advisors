@@ -38,6 +38,9 @@ a {
 }
 
 @media(max-width: 500px){
+    .App-header{
+        text-align: center;
+    }
     .logo-container{
         float: none !important;
         text-align: center;
@@ -48,5 +51,20 @@ a {
     }
     .logo-small {
         height: 20px;
+    }
+
+    .menuMain,
+    .rc-menu-horizontal {
+        text-align: center !important;
+    }
+
+    .show_menu{
+        text-align: center;
+    }
+}
+
+@media(max-width: 320px){
+    .rc-menu-horizontal {
+        font-size: 0.7em !important;
     }
 }

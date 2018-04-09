@@ -89,9 +89,9 @@ export default class Contact extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div class="offset-by-two eight columns">
-                        <label for="exampleRecipientInput">Reason for contacting</label>
-                        <select class="u-full-width" id="exampleRecipientInput">
+                        <div className="offset-by-two eight columns">
+                        <label htmlFor="exampleRecipientInput">Reason for contacting</label>
+                        <select className="u-full-width" id="exampleRecipientInput">
                             <option value="consultation">Consultation</option>
                             <option value="General Inquiry">General Inquiry</option>
                         </select>
