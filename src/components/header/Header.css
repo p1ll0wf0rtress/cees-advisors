@@ -1,16 +1,29 @@
 .App-header {
     /* start shadow */
-    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+
     /* end shadow */
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0);
     z-index: 1;
     transition: height 0.7s;
+    -webkit-transition: background-color 0.7s linear;
+    -ms-transition: background-color 0.7s linear;
+    transition: background-color 0.7s linear;
+}
+
+.noShadow {
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0);
+}
+
+.shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
 }
 
 .menuMain {

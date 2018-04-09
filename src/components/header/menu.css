@@ -36,15 +36,15 @@
   }
   .rc-menu-item-active,
   .rc-menu-submenu-active > .rc-menu-submenu-title {
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);;
   }
   .rc-menu-item-selected {
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
   }
   .rc-menu-submenu-selected {
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);;
   }
   .rc-menu > li.rc-menu-submenu {
     padding: 0;
@@ -82,7 +82,7 @@
     position: absolute;
   }
   .rc-menu-submenu > .rc-menu {
-    background-color: #fff
+    background-color: rgba(0,0,0,0);
   }
   .rc-menu .rc-menu-submenu-title .anticon,
   .rc-menu .rc-menu-item .anticon {
@@ -92,10 +92,9 @@
     top: -1px;
   }
   .rc-menu-horizontal {
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);;
     border: none;
     border-bottom: 1px solid transparent;
-    border-bottom: 1px solid #fff;
     box-shadow: none;
     text-align: right;
   }

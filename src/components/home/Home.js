@@ -48,11 +48,11 @@ export default class Home extends Component {
     render() {
       return(
           <div className="homeContainer">
-            <div className="full_width" style={{ backgroundImage: 'url(' + require('./banner.jpg') + ')' }}>
+            <div className="full_width" style={{ backgroundImage: 'url(' + require('./banner.jpg') + ')'}}>
               <div className="container overImage">
                 <div className="row" style={{textAlign: 'center'}}>
-                  <div ref="mainTitle" className="mainTitle">Business Intelligence Meets Relationship Marketing</div>
-                  <div ref="mainSubtitle" className="mainSubtitle" style={{paddingBottom: 175}}>A full spectrum approach to uncompromised business growth and development</div>
+                  <div ref="mainTitle" className="mainTitle" style={{paddingTop: '40vh'}}>Business Intelligence Meets Relationship Marketing</div>
+                  <div ref="mainSubtitle" className="mainSubtitle">A full spectrum approach to uncompromised business growth and development</div>
                 </div>
               </div>
             </div>

@@ -29,34 +29,39 @@ export default class Header extends Component {
         this.setHeaderItemsComputer(top)
     }
 
-    setHeaderItemsPhone = (top) => {
-        if(top > 40){
-            this.setState({
-                headerMargin: 0,
-                logo: 'logo-small',
-                bottomPadding: 5
-            }) 
-        } else {
-                this.setState({
-                    headerMargin: 0,
-                    logo: 'logo-large',
-                    bottomPadding: 15
-                })
-        }
-    }
+    // setHeaderItemsPhone = (top) => {
+    //     if(top > 40){
+    //         this.setState({
+    //             headerMargin: 0,
+    //             logo: 'logo-small',
+    //             bottomPadding: 5
+    //         }) 
+    //     } else {
+    //             this.setState({
+    //                 headerMargin: 0,
+    //                 logo: 'logo-large',
+    //                 bottomPadding: 15,
+                    
+    //             })
+    //     }
+    // }
 
     setHeaderItemsComputer = (top) =>{
         if(top > 40){
             this.setState({
                 headerMargin: 0,
                 logo: 'logo-small',
-                bottomPadding: 15
+                bottomPadding: 15,
+                backgroundColor: 'rgba(255, 255, 255, 1)',
+                shadowClass: 'shadow'
             }) 
         } else {
                 this.setState({
                     headerMargin: 15,
                     logo: 'logo-large',
-                    bottomPadding: 25
+                    bottomPadding: 25,
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    shadowClass: 'noShadow'
                 })
         }
     }
@@ -71,7 +76,7 @@ export default class Header extends Component {
 
     render(){
         return(
-            <header className="App-header" style={{paddingTop: 15, paddingBottom: this.state.bottomPadding}}>
+            <header className={`App-header ${this.state.shadowClass}`} style={{paddingTop: 15, paddingBottom: this.state.bottomPadding, backgroundColor: this.state.backgroundColor}}>
                 <div className="container">
                     <div className="three columns logo-container">
                         <Link to="/"><img src={linearLogo} className={this.state.logo} alt="logo"/></Link>
