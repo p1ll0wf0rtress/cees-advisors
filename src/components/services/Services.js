@@ -19,14 +19,14 @@ export default class Services extends Component {
 
     componentDidMount(){
         client
-        .fetch('*[_type == "post" && slug.current == "services1"][0]')
+        .fetch('*[_type == "page" && slug.current == "services1"][0]')
         .then((res) => {
             this.refs.servicesContent1.innerHTML = blocks(res)
         }).catch((err) => console.log(err + " from services"));
         client
-        .fetch('*[_type == "post" && slug.current == "services2"][0]')
+        .fetch('*[_type == "page" && slug.current == "services2"][0]')
         .then((res) => {
-            this.setState({  mainImage: urlFor(res.mainImage).url() })
+            // this.setState({  mainImage: urlFor(res.mainImage).url() })
             this.refs.servicesContent2.innerHTML = blocks(res)
         }).catch((err) => console.log(err + " from services"))
     }
@@ -39,7 +39,7 @@ export default class Services extends Component {
                         <div className="ten columns offset-by-one service_content" ref="servicesContent1"></div>
                     </div>
                     <div className="row" style={{marginTop: 75}}>
-                        <img src={this.state.mainImage} alt="process icon" style={{height: 100, marginBottom: 10}} />
+                        {/* <img src={this.state.mainImage} alt="process icon" style={{height: 100, marginBottom: 10}} /> */}
                         <div className="ten columns offset-by-one service_content2" ref="servicesContent2"></div>
                     </div>
                 </div>

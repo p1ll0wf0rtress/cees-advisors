@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/home/Home';
-import RealEstate from './components/realestate/realestate';
 import About from './components/about/About';
 import Services from './components/services/Services'
 import Blog from './components/blog/Blog';
@@ -44,7 +43,6 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/blog" component={Blog} />
               <Route path="/blog/post/:slug" component={BlogPost} />
-              <Route path="/realestate" component={RealEstate} />
               <Route path="/" component={Footer} />
           </div>
         </Router>

@@ -14,7 +14,7 @@ var blocks = function(res){
     return blocksToHtml({
         blocks: res.body,
         serializers: serializers,
-        projectId: 'gtb605x1',
+        projectId: 'ef8nihto',
         dataset: 'production',
     });
 }

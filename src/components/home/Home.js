@@ -3,7 +3,6 @@ import './Home.css';
 import client from '../../imports/sanityclient';
 import blocks from '../../imports/blocksToHtml';
 import { Link } from 'react-router-dom';
-import linearLogo from '../header/linear_logo.png';
 import './../../hover-min.css'
 
 export default class Home extends Component {
@@ -29,7 +28,7 @@ export default class Home extends Component {
     // get body content1 i.e. the section after the chevron (position 1 & 2 have been reversed for now)
     getBody2 = () => {
       client
-      .fetch('*[_type == "post" && slug.current == "homebody2"][0]')
+      .fetch('*[_type == "page" && slug.current == "homebody2"][0]')
       .then(res => { 
           this.refs.homeBodyContent2.innerHTML = blocks(res);
        })
@@ -38,7 +37,7 @@ export default class Home extends Component {
     //get body content2 i.e. the first section after the banner
     getBody1 = () => {
       client
-      .fetch('*[_type == "post" && slug.current == "homebody"][0]')
+      .fetch('*[_type == "page" && slug.current == "homebody1"][0]')
       .then(res => { 
           this.refs.homeBodyContent.innerHTML = blocks(res);
        })
@@ -51,8 +50,9 @@ export default class Home extends Component {
             <div className="full_width" style={{ backgroundImage: 'url(' + require('./banner.jpg') + ')'}}>
               <div className="container overImage">
                 <div className="row" style={{textAlign: 'center'}}>
-                  <div ref="mainTitle" className="mainTitle" style={{paddingTop: '40vh'}}>Business Intelligence Meets Relationship Marketing</div>
-                  <div ref="mainSubtitle" className="mainSubtitle">A full spectrum approach to uncompromised business growth and development</div>
+                  <div ref="mainTitle" className="mainTitle" style={{paddingTop: '40vh'}}>Competitive Edge Energy Solutions</div>
+                  <div ref="mainSubtitle" className="mainSubtitle">Creating better buildings for better world</div>
+                  <button className="button-primary" style={{marginTop: 20}}>Get Ready</button>
                 </div>
               </div>
             </div>
@@ -65,9 +65,9 @@ export default class Home extends Component {
             </div>
             <div className="callToAction">
               <div className="container">
-                <div className="row" style={{textAlign: 'center', color: '#fff'}}>
-                  <h3>Ready to start growing?</h3>
-                  <p>Fully realize your growth potential with Architech.</p>
+                <div className="row" style={{textAlign: 'center', color: '#fff', marginTop: 225}}>
+                  <h3>Get your buildings ready</h3>
+                  <p>Energy efficiency is just a click away</p>
                   <Link to="/contact"><button className="button-primary hvr-float-shadow" style={{marginTop: 20}}>Contact Us</button></Link>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default class Home extends Component {
             
               <div className="row" style={{textAlign: 'center', marginTop: 100, marginBottom: 0}}>
                 <div className="twelve columns">
-                  <h3>Explore Our Process</h3>
+                  <h3>A Simply Efficient Process</h3>
                 </div>
               </div>
 
@@ -100,7 +100,7 @@ export default class Home extends Component {
               </div>
 
               <div className="row" style={{textAlign: 'center', marginTop: 100}}>
-                <img src={linearLogo} alt="horizontal Architech logo" style={{height: 50}}/>
+                <h5>Competitive Edge Energy Solutions</h5>
               </div>
             </div>
           </div>

@@ -15,7 +15,8 @@ export default class Footer extends Component {
                     <div className="two columns">
                         <ul>
                             <Link to="/"><li className="footerMenuItem">Home</li></Link>
-                            <Link to="/about"><li className="footerMenuItem">Who We Are</li></Link>
+                            <Link to="/about"><li className="footerMenuItem">About</li></Link>
+                            <Link to="/services"><li className="footerMenuItem">Services</li></Link>
                             <Link to="/blog"><li className="footerMenuItem">Blog</li></Link>
                             <Link to="/contact"><li className="footerMenuItem">Contact Us</li></Link>
                         </ul>

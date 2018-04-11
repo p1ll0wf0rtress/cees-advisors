@@ -39,15 +39,15 @@ a {
 }
 
 .logo-large {
-    margin-top: 18px;
-    height: 40px;
-    transition: height 0.7s, margin 0.7s;
+    margin-top: 5px;
+    width: 150px;
+    transition: width 0.7s, margin 0.7s;
 }
 
 .logo-small {
-    margin-top: 7.5px;
-    height: 30px;
-    transition: height 0.7s, margin 0.7s;
+    margin-top: 15px;
+    width: 100px;
+    transition: width 0.7s, margin 0.7s;
 }
 
 @media(max-width: 500px){

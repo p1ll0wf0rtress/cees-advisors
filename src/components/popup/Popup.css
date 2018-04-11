@@ -1,5 +1,6 @@
 .popupContainer {
-    background-color: #06BF85;
+    /* background-color: #153131; */
+    background-color: #fff;
     z-index: 10;
     width: 50%;
     position: fixed;
@@ -12,7 +13,7 @@
 
 .popupContent {
     padding: 20px;
-    color: #fff;
+    color: #153131;
 }
 
 .popupGraphic {
@@ -22,21 +23,24 @@
 
 .popupContent > p {
     font-size: 16px;
+    color: #153131;
 }
 
 .popupContent > h4 {
     font-weight: 400;
+    color: #153131;
 }
 
 .bottomSection{
     position: relative;
     padding: 20px 0px 10px 0px;
-    background-color: #fff;
+    background-color: #153131;
 }
 
 .bottomSection > button {
-    background-color: #222;
-    color: white !important;
+    background-color: #45CB85;
+    border: 0px solid #45CB85;
+    color: #153131 !important;
     /* -webkit-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
     -moz-box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5);
     box-shadow: 0 9px 15px rgba(57, 63, 72, 0.5); */
@@ -57,7 +61,7 @@
 }
 
 .close {
-    color: #fff;
+    color: #153131;
     height: 16px;
     border: none;
     padding: 0px;

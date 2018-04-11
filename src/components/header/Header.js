@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import linearLogo from './linear_logo.png';
+import Logo from './Logo.png';
 import './Header.css';
 import Menu, { MenuItem } from 'rc-menu';
 import './menu.css';
@@ -49,18 +49,18 @@ export default class Header extends Component {
     setHeaderItemsComputer = (top) =>{
         if(top > 40){
             this.setState({
-                headerMargin: 0,
+                headerMargin: 15,
                 logo: 'logo-small',
                 bottomPadding: 15,
-                backgroundColor: 'rgba(255, 255, 255, 1)',
+                backgroundColor: 'rgba(69, 203, 133, 1)',
                 shadowClass: 'shadow'
             }) 
         } else {
                 this.setState({
-                    headerMargin: 15,
+                    headerMargin: 25,
                     logo: 'logo-large',
                     bottomPadding: 25,
-                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    backgroundColor: 'rgba(69, 203, 133, 0)',
                     shadowClass: 'noShadow'
                 })
         }
@@ -79,7 +79,7 @@ export default class Header extends Component {
             <header className={`App-header ${this.state.shadowClass}`} style={{paddingTop: 15, paddingBottom: this.state.bottomPadding, backgroundColor: this.state.backgroundColor}}>
                 <div className="container">
                     <div className="three columns logo-container">
-                        <Link to="/"><img src={linearLogo} className={this.state.logo} alt="logo"/></Link>
+                        <Link to="/"><img src={Logo} className={this.state.logo} alt="logo"/></Link>
                     </div>
                     <div className="six columns offset-by-three">
                         <Menu mode="horizontal" className="u-full-width menuMain" id="menuMain" style={{textAlign: 'right !important', marginTop: this.state.headerMargin}}>

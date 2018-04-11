@@ -112,7 +112,7 @@
   }
   .rc-menu-horizontal > .rc-menu-submenu-active,
   .rc-menu-horizontal > .rc-menu-item-active {
-    border-bottom: 2px solid #55BF9B;
+    border-bottom: 2px solid #45CB85;
     color: #383F3D;
   }
   .rc-menu-horizontal:after {

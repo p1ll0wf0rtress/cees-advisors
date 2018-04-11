@@ -1,7 +1,7 @@
 const sanityClient = require('@sanity/client');
 
 const client = sanityClient({
-  projectId: 'gtb605x1',
+  projectId: 'ef8nihto',
   dataset: 'production',
   useCdn: true
 })
