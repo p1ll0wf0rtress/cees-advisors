@@ -30,7 +30,7 @@ export default class BlogPost extends Component {
             this.refs.postContent.innerHTML = blocksToHtml({
               blocks: res.body,
               serializers: serializers,
-              projectId: 'gtb605x1',
+              projectId: 'ef8nihto',
               dataset: 'production',
             });
          })
@@ -44,7 +44,7 @@ export default class BlogPost extends Component {
                     <h3>{this.state.title}</h3>
                 </div>
                 <div className="row">
-                    <div className="twelve columns" ref="postContent"></div>
+                    <div className="twelve columns blog_post" ref="postContent"></div>
                 </div>
             </div>
         )

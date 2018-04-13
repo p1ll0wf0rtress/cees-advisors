@@ -27,6 +27,10 @@ export default class Contact extends Component {
         this.setState({ email: e.target.value })
     }
 
+    handleReason = (e) => {
+        this.setState({ reason: e.target.value })
+    }
+
     handlePhone = (e) => {
         this.setState({ phone: e.target.value })
     }
@@ -40,7 +44,7 @@ export default class Contact extends Component {
 
         console.log(this.state)
 
-        axios.post("https://hooks.zapier.com/hooks/catch/2944818/k301v9/", JSON.stringify(this.state))
+        axios.post("https://hooks.zapier.com/hooks/catch/2575639/ft8nl6/", JSON.stringify(this.state))
         .then((res) => {
             this.setState({ submitted: true })
         });
@@ -62,7 +66,7 @@ export default class Contact extends Component {
                 <div className="contactTitle">
                     <div className="row">
                         <div className="eight columns offset-by-two">
-                            <h3>We like to talk!</h3>
+                            <h3>We're ready to get you ready!</h3>
                             <p>Send us a message and we'll be in touch as soon as possible!</p>
                         </div>
                     </div>
@@ -91,8 +95,10 @@ export default class Contact extends Component {
                     <div className="row">
                         <div className="offset-by-two eight columns">
                         <label htmlFor="exampleRecipientInput">Reason for contacting</label>
-                        <select className="u-full-width" id="exampleRecipientInput">
+                        <select className="u-full-width" id="exampleRecipientInput" onChange={this.handleReason}>
+                            <option value="select" disabled selected>Select a value</option>
                             <option value="consultation">Consultation</option>
+                            <option value="speaking">Speaking</option>
                             <option value="General Inquiry">General Inquiry</option>
                         </select>
                         </div>
@@ -100,14 +106,14 @@ export default class Contact extends Component {
                     <div className="row">
                         <div className="eight columns offset-by-two">
                         <label htmlFor="message">Message</label>
-                        <textarea className="u-full-width" placeholder="Hey Architech! …" id="message" onChange={this.handleMessage}></textarea>
+                        <textarea className="u-full-width" placeholder="Hello CEES! …" id="message" onChange={this.handleMessage}></textarea>
                         <input className="button-primary" value="Submit" autoComplete="off" type="submit" onClick={this.sendMessage}/>
                         </div>
                     </div>
                 </form>
                 </div>)}
                 {this.renderIf(this.state.submitted,
-                    <div className="row">
+                    <div className="row" style={{marginTop: '30vh', marginBottom: '30vh'}}>
                         <p>Thanks for your message! We'll be in touch shortly.</p>
                     </div>
                 )}

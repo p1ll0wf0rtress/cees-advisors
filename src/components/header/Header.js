@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo.png';
+import Logo from './Logo.svg';
 import './Header.css';
 import Menu, { MenuItem } from 'rc-menu';
 import './menu.css';
@@ -29,39 +29,24 @@ export default class Header extends Component {
         this.setHeaderItemsComputer(top)
     }
 
-    // setHeaderItemsPhone = (top) => {
-    //     if(top > 40){
-    //         this.setState({
-    //             headerMargin: 0,
-    //             logo: 'logo-small',
-    //             bottomPadding: 5
-    //         }) 
-    //     } else {
-    //             this.setState({
-    //                 headerMargin: 0,
-    //                 logo: 'logo-large',
-    //                 bottomPadding: 15,
-                    
-    //             })
-    //     }
-    // }
-
     setHeaderItemsComputer = (top) =>{
-        if(top > 40){
+        if(top > 80){
             this.setState({
                 headerMargin: 15,
                 logo: 'logo-small',
                 bottomPadding: 15,
-                backgroundColor: 'rgba(69, 203, 133, 1)',
-                shadowClass: 'shadow'
+                backgroundColor: '#00171fff',
+                menuLink: 'scroll',
+                shadowClass: 'shadow',
             }) 
         } else {
                 this.setState({
-                    headerMargin: 25,
+                    headerMargin: 20,
                     logo: 'logo-large',
-                    bottomPadding: 25,
-                    backgroundColor: 'rgba(69, 203, 133, 0)',
-                    shadowClass: 'noShadow'
+                    bottomPadding: 20,
+                    backgroundColor: '#00171f00',
+                    menuLink: 'noScroll',
+                    shadowClass: 'noShadow',
                 })
         }
     }
@@ -81,13 +66,14 @@ export default class Header extends Component {
                     <div className="three columns logo-container">
                         <Link to="/"><img src={Logo} className={this.state.logo} alt="logo"/></Link>
                     </div>
-                    <div className="six columns offset-by-three">
-                        <Menu mode="horizontal" className="u-full-width menuMain" id="menuMain" style={{textAlign: 'right !important', marginTop: this.state.headerMargin}}>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/">Home</Link></MenuItem>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/services">Services</Link></MenuItem>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/about">About</Link></MenuItem>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/blog">Blog</Link></MenuItem>
-                            <MenuItem style={{padding: "10px 5px"}}><Link style={{padding: "10px 5px"}} to="/contact">Contact</Link></MenuItem>
+                    <div className="eight columns offset-by-one">
+                        <Menu mode="horizontal" className="menuMain" id="menuMain" style={{textAlign: 'right !important', marginTop: this.state.headerMargin}}>
+                            <MenuItem style={{padding: '20px 10px'}}><Link className={this.state.menuLink + " menuItem"} to="/">Home</Link></MenuItem>
+                            <MenuItem style={{padding: '20px 10px'}}><Link className={this.state.menuLink + " menuItem"} to="/services">Solutions</Link></MenuItem>
+                            <MenuItem style={{padding: '20px 10px'}}><Link className={this.state.menuLink + " menuItem"} to="/services">Industry</Link></MenuItem>
+                            <MenuItem style={{padding: '20px 10px'}}><Link className={this.state.menuLink + " menuItem"} to="/about">About</Link></MenuItem>
+                            <MenuItem style={{padding: '20px 10px'}}><Link className={this.state.menuLink + " menuItem"} to="/blog">Blog</Link></MenuItem>
+                            <MenuItem style={{padding: '20px 10px'}}><Link className={this.state.menuLink + " menuItem"} to="/contact">Contact Us</Link></MenuItem>
                         </Menu>
                     </div>
                 </div>

@@ -13,7 +13,7 @@
     border: 1px solid #fff;
     box-shadow: 0 0 4px #fff;
     border-radius: 3px;
-    color: #666;
+    color: #555;
   }
   .rc-menu-hidden {
     display: none;
@@ -29,7 +29,7 @@
     padding: 0;
   }
   .rc-menu-item-group-title {
-    color: #999;
+    color: #555;
     line-height: 1.5;
     padding: 8px 10px;
     border-bottom: 1px solid #dedede;
@@ -82,7 +82,7 @@
     position: absolute;
   }
   .rc-menu-submenu > .rc-menu {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(255, 255, 255, 0.6);
   }
   .rc-menu .rc-menu-submenu-title .anticon,
   .rc-menu .rc-menu-item .anticon {
@@ -113,7 +113,7 @@
   .rc-menu-horizontal > .rc-menu-submenu-active,
   .rc-menu-horizontal > .rc-menu-item-active {
     border-bottom: 2px solid #45CB85;
-    color: #383F3D;
+    color: #555;
   }
   .rc-menu-horizontal:after {
     content: "\20";

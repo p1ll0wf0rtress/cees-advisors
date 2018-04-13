@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
 import client from '../../imports/sanityclient';
 
 export default class BlogList extends Component {
@@ -15,18 +14,19 @@ export default class BlogList extends Component {
         this.getBlogTitles();
     }
 
+    toBlogPost = (post) => {
+        this.props.history.push(`/blog/${post}`)
+    }
+
     getBlogTitles = () => {
         client
         .fetch('*[_type == "blog"]')
         .then((res) => {
-            const posts = res.map((post) => <Link to={`/blog/${post.slug.current}`} key={post.slug.current}><li className="blog_card" ><h5>{post.title}</h5><p>{post.description}</p></li></Link>);
-            this.setState({blogPosts: posts})
+            // const posts = res.map((post) => <Link to={`/blog/${post.slug.current}`} key={post.slug.current}><li className="blog_card" ><h5>{post.title}</h5><p>{post.description}</p></li></Link>);
+            const posts = res.map((post) => <li key={post.slug.current} className="blog_card hvr-skew-forward twelve columns" onClick={() => this.toBlogPost(post.slug.current)}><h5>{post.title}</h5><p>{post.description}</p></li>);
+            this.setState({blogPosts: posts.reverse()})
         })
     }
-
-    // setPost = (slug) => {
-    //     this.props.setPost(slug)
-    // }
 
     render(){
         return(

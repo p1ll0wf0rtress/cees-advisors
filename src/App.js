@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/home/Home';
 import About from './components/about/About';
 import Services from './components/services/Services'
@@ -8,6 +8,7 @@ import Blog from './components/blog/Blog';
 import BlogPost from './components/blog/BlogPost';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import NotFound from './components/notfound/NotFound'
 import './App.css';
 import './normalize.css';
 import './skeleton.css';
@@ -35,15 +36,18 @@ class App extends Component {
         <div>  
         <Router basename="/">
           <div>
-              <Popup />  
-              <Route path="/" component={Header} />
+            <Route path="/" component={Popup} />
+            <Route path="/" component={Header} />
+            <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/services" component={Services} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/blog" component={Blog} />
               <Route path="/blog/post/:slug" component={BlogPost} />
-              <Route path="/" component={Footer} />
+              <Route component={NotFound} />
+            </Switch>
+            <Route path="/" component={Footer} />
           </div>
         </Router>
         </div>

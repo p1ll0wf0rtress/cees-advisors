@@ -2,16 +2,9 @@ import React, { Component } from 'react';
 import './Popup.css';
 import client from '../../imports/sanityclient';
 import blocks from '../../imports/blocksToHtml';
-import imageUrlBuilder from '@sanity/image-url';
 import planting from './planting.svg'
 
 import { withRouter } from 'react-router-dom';
-
-const builder = imageUrlBuilder(client)
- 
-function urlFor(source) {
-  return builder.image(source)
-}
 
 export default class Popup extends Component {
     constructor(props){
@@ -32,7 +25,7 @@ export default class Popup extends Component {
         //eslint-disable-next-line
         let timeToShow = Math.floor(Math.random() * (20 - 8 + 1)) + 8; // time in seconds, randomized, to show popup between 20 and 8 seconds
         setTimeout(this.showPopup, 
-            // timeToShow * 
+            timeToShow * 
             1000)
         this.getPopupContent()
     }
@@ -42,13 +35,14 @@ export default class Popup extends Component {
         .fetch('*[_type == "page" && slug.current == "popup"][0]')
         .then((res) => {
             //set body content for popup
+            this.refs.popupTitle.innerHTML = res.title;
             this.refs.popupContent.innerHTML = blocks(res);
         })
     }
     //shows the popup
     showPopup = () => {
         var clicked = window.localStorage.getItem("clicked");
-        if(clicked === "true"){
+        if(clicked === "true" || this.props.location.pathname.includes("/blog") === true || this.props.location.pathname === "/contact"){
             //return
         } else {
             this.setState({ show: "block" });
@@ -67,19 +61,28 @@ export default class Popup extends Component {
 
     render(){
         return (
-        <div style={{display: this.state.show }} className="popupContainer">
-            <div className="closeContainer">
-                <a onClick={this.hidePopup} className="close">&times;</a>
-            </div>
-            <div className="popupContent" style={{textAlign: 'left', display: 'flex', flexDirection: 'row'}}>
-                <div ref="popupContent">
+        <div style={{display: this.state.show }} className="viewport">
+            <div className="popupContainer">
+                <div className="closeContainer">
+                    <a onClick={this.hidePopup} className="close">&times;</a>
                 </div>
-                <div style={{textAlign: 'center'}}>
-                    <img src={planting} className="popupGraphic" alt="watering can icon"/>
+                <div className="popupContent container" style={{textAlign: 'left'}}>
+                    <div className="row">
+                    <div className="eight columns">
+                        <h1 ref="popupTitle" >.</h1>
+                    </div>
+                    <div style={{textAlign: 'center'}} className="offset-by-one two columns">
+                        <img src={planting} className="popupGraphic" alt="planting icon"/>
+                    </div>
+                    </div>
+                    <div className="row" style={{marginTop: 20}}>
+                        <div ref="popupContent">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="bottomSection" style={{textAlign: 'center'}}>
-                <this.ContactButton/>
+                <div className="bottomSection" style={{textAlign: 'center'}}>
+                    <this.ContactButton/>
+                </div>
             </div>
         </div>
         )

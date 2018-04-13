@@ -15,14 +15,14 @@
     text-align: left;
 }
 
-.service_content2 > div > p:nth-child(6),
+/* .service_content2 > div > p:nth-child(6),
 .service_content2 > div > p:nth-child(9),
 .service_content2 > div > p:nth-child(12),
 .service_content2 > div > p:nth-child(15),
 .service_content2 > div > p:nth-child(18),
 .service_content2 > div > p:nth-child(21) {
     text-align: left;
-}
+} */
 
 .service_content2 > div > p:nth-child(4){
     margin-bottom: 100px

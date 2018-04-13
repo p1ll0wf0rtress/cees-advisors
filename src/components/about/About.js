@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bios from './bios/Bios'
+// import Bios from './bios/Bios'
 import './About.css';
 
 export default class About extends Component {
@@ -17,15 +17,15 @@ export default class About extends Component {
                         <div style={{textAlign: 'center'}}>
                             {/* <img src={this.state.image1} alt="about main 1" style={{height: 60, marginBottom: 20 }} /> */}
                             <div className="ten columns offset-by-one" ref="about1" style={{textAlignLast: 'center'}}>
-                                <h3>Our Mission</h3>
-                                <p>Architech's goal is to connect with people in a real way. Regardless of the technology used, platform changes or new techniques, Architech will always strive to create a person to person interaction. No bots, no buying clout, just all natural interpersonal communication.</p>
-                                <h3>About Architech</h3>
-                                <p>Architech is a data-driven consulting firm offering a full spectrum approach to uncompromised business growth and development. Starting in 2017, Architech was founded on the idea that the fundamentals of communication have not changed, but the conventions and amount of opportunities have. While businesses have more opportunity to connect with potential customers, the importance of every interaction has increased significantly. Architech is focused on maximizing the value of precious interactions companies have with potential customers by using a combination of propietary data and the data our customers already have.</p>
+                                <h3>Any Building. Any Business. Anywhere.</h3>
+                                <p>No matter what your organization's current building operations look like, Competitive Edge Energy Solutions can bring your building up to the forefront of operational efficiency. Our 30 years of expertise is within your reach at the click of a button. Contact us to today to find out more.</p>
+                                <h3>About CEES Advisors</h3>
+                                <p></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Bios />
+                {/* <Bios /> */}
             </div>
         )
     }

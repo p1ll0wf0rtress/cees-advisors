@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import client from '../../imports/sanityclient';
 import blocks from '../../imports/blocksToHtml';
 import './Services.css'
-import imageUrlBuilder from '@sanity/image-url';
+// import imageUrlBuilder from '@sanity/image-url';
 
-const builder = imageUrlBuilder(client)
+// const builder = imageUrlBuilder(client)
  
-function urlFor(source) {
-  return builder.image(source)
-}
+// function urlFor(source) {
+//   return builder.image(source)
+// }
 
 export default class Services extends Component {
     constructor(props){
@@ -37,6 +37,9 @@ export default class Services extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="ten columns offset-by-one service_content" ref="servicesContent1"></div>
+                    </div>
+                    <div className="row" style={{marginTop: 50}}>
+                        <button onClick={() => this.props.history.push('/contact')}>Contact Us Today!</button>
                     </div>
                     <div className="row" style={{marginTop: 75}}>
                         {/* <img src={this.state.mainImage} alt="process icon" style={{height: 100, marginBottom: 10}} /> */}

@@ -25,25 +25,47 @@
 }
 
 .homebody {
-    margin-top: 25px;
+    margin-top: 60px;
     text-align-last: center;
+    margin-bottom: 35px;
 }
 
 .homebody > div > figure > img {
     height: 75px;
 }
 
-.homebody > div > p:nth-child(4) {
-    margin-bottom: 100px;
+.homebody > div > p:nth-child(2) {
+    margin-bottom: 125px;
+}
+
+.window_container {
+    margin-bottom: 100px
+}
+
+.window {
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.window > div > div > h4 {
+    margin-top: 25px;
 }
 
 .callToAction {
-    background-color: #00171F;
+    background-color: rgba(235, 233, 233, 0.7);
     padding-top: 120px;
     padding-bottom: 60px;
     -webkit-clip-path: polygon(100% 100%, 0% 100%, 0 21%, 12% 21%, 12% 35%, 19% 35%, 19% 16%, 31% 8%, 31% 45%, 56% 45%, 56% 24%, 69% 24%, 69% 50%, 78% 50%, 78% 23%, 88% 23%, 88% 0, 94% 0, 94% 39%, 100% 39%);
     clip-path: polygon(100% 100%, 0% 100%, 0 21%, 12% 21%, 12% 35%, 19% 35%, 19% 16%, 31% 8%, 31% 45%, 56% 45%, 56% 24%, 69% 24%, 69% 50%, 78% 50%, 78% 23%, 88% 23%, 88% 0, 94% 0, 94% 39%, 100% 39%);
     
+}
+
+.homebody2 {
+    margin-top: 75px;
 }
 
 .trifold {
@@ -63,7 +85,7 @@
 }
 
 @media(max-width: 500px){
-    .homeContainer {
-        /* margin-top: 159px; */
+    .mainTitle {
+        /* margin-top: 100px; */
     }
 }
